@@ -1,5 +1,4 @@
 Hola te estoy probando
-<<<<<<< HEAD
+
 y Yo a ti
-=======
->>>>>>> a849c6aa6221679981a0af6597bdb316c1e9f45b
+
