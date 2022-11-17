@@ -1,4 +1,4 @@
-package modelo;
+package com.example.crudv1.modelo;
 
 
 import java.util.List;

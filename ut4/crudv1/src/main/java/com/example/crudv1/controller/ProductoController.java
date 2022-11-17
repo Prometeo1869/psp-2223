@@ -1,4 +1,4 @@
-package controller;
+package com.example.crudv1.controller;
 
 import java.util.List;
 
@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.crudv1.modelo.Producto;
+import com.example.crudv1.modelo.ProductoRepositorio;
+
 import lombok.RequiredArgsConstructor;
-import modelo.Producto;
-import modelo.ProductoRepositorio;
 
 /**
  * 
