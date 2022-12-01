@@ -42,35 +42,28 @@ public class Controlador  {
     }
 
     public void reanudarHilo1(ActionEvent event) {
-        h1.setSeguir(true);
+        h1.getSuspender().set(false);
         labelHilo1.setText("HILO 1 REANUDADO");
     }
 
     public void reanudarHilo2(ActionEvent event) {
-        h2.setSeguir(true);
+        h2.getSuspender().set(false);
         labelHilo2.setText("HILO 2 REANUDADO");
     }
 
     public void suspenderHilo1(ActionEvent event) throws InterruptedException {
-        h1.setSeguir(false);
-        while(h1.getSeguir()) {
-            wait();
-        }
+        h2.getSuspender().set(true);
         labelHilo1.setText("HILO 1 SUSPENDIDO");
     }
 
     public void suspenderHilo2(ActionEvent event) throws InterruptedException {
-        h2.setSeguir(false);
-        while(h2.getSeguir()) {
-            wait();
-        }
+        h2.getSuspender().set(true);
         labelHilo2.setText("HILO 2 SUSPENDIDO");
     }
 
     public void pulsarFinalizar(ActionEvent event) {
-        h1.setSeguir(false);
-        h2.setSeguir(false);
-        notify();
+        h1.getSuspender().set(true);
+        h2.getSuspender().set(true);
     }
 
     public void setMain(Main main) {
