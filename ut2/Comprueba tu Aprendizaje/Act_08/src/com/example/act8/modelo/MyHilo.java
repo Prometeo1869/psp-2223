@@ -8,21 +8,27 @@ import javafx.scene.control.TextField;
 
 public class MyHilo extends Thread {
 
-    int c = 0;
-    TextField textField;
-    boolean seguir = true;
+    private int c = 0;
+    private TextField textField;
+    private SolicitaSuspender suspender;
+
 
     public MyHilo() {
+        suspender.set(false);
+    }
 
+    public SolicitaSuspender getSuspender() {
+        return suspender;
     }
 
     public void run() {
 
         try {
-            while (seguir) {
+            while (!suspender.isSolicitaSuspender()) {
                 c++;
                 this.textField.setText("" + c);
                 sleep(500);
+                suspender.esperandoParaReanudar();
             }
 
 
@@ -34,11 +40,4 @@ public class MyHilo extends Thread {
         this.textField = textField;
     }
 
-    public void setSeguir(boolean flag) {
-        this.seguir = flag;
-    }
-
-    public boolean getSeguir() {
-        return seguir;
-    }
 }
