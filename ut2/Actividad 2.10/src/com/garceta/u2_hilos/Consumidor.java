@@ -11,7 +11,6 @@ public class Consumidor extends Thread {
     @Override
     public void run() {
         String cadena = "";
-        synchronized (cola) {
             while(true) {
                 s = cola.get(); //recoge la cadena de la cola
                 System.out.print(s + " ");
@@ -21,6 +20,5 @@ public class Consumidor extends Thread {
                     throw new RuntimeException(e);
                 }
             }
-        }//synchronized
     }//run
 }//Consumidor
