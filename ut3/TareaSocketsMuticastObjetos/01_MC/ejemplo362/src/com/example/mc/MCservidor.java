@@ -16,7 +16,7 @@ public class MCservidor {
         MulticastSocket ms = new MulticastSocket();
 
         int puerto = 12345; //Puerto multicast
-        InetAddress grupo = InetAddress.getByName("255.0.0.1"); //Grupo
+        InetAddress grupo = InetAddress.getByName("225.0.0.1"); //Grupo
 
         String cadena = "";
 
