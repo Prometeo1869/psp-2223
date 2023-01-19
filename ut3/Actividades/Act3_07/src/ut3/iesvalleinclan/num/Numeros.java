@@ -1,6 +1,8 @@
 package ut3.iesvalleinclan.num;
 
-public class Numeros {
+import java.io.Serializable;
+
+public class Numeros implements Serializable {
 
     int numero;
     long cuadrado;
