@@ -24,7 +24,7 @@ public class TCPObjetoServidor1 {
         ObjectInputStream inObjeto = new ObjectInputStream(cliente.getInputStream());
         Persona dato = (Persona) inObjeto.readObject();
 
-        System.out.println("Recobo: " + dato.getNombre() + "*"+ dato.getEdad());
+        System.out.println("Recibo: " + dato.getNombre() + "*"+ dato.getEdad());
 
         //CERRAR STREAMS Y SOCKETS
         outObjeto.close();
