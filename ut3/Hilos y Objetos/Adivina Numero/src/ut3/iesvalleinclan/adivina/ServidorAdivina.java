@@ -24,7 +24,7 @@ public class ServidorAdivina {
             cliente = servidor.accept();    //esperando cliente
             id++;                           //identificador para el cliente
             HiloServidorAdivina hilo = new HiloServidorAdivina(cliente, objeto, id);
-            hilo.strart();
+            hilo.start();
         } //while
     }
 }
