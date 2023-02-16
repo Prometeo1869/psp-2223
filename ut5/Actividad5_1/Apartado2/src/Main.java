@@ -17,16 +17,25 @@ public class Main {
         try {
             md = MessageDigest.getInstance("SHA-256");
 
+            //RESUMEN 1
+            byte dataBytes[] = texto1.getBytes();           //TEXTO A BYTES
+            md.update(dataBytes);                           //SE INTRODUCE TEXTO EN BYTES A RESUMIR
+            byte resumen1[] = md.digest(clave.getBytes());   //SE CALCULA EL RESUMEN
 
-            byte dataBytes[] = texto1.getBytes();   //TEXTO A BYTES
-            md.update(dataBytes);                   //SE INTRODUCE TEXTO EN BYTES A RESUMIR
-            byte resumen[] = md.digest();           //SE CALCULA EL RESUMEN
+            //RESUMEN 2
+            byte dataBytes2[] = texto2.getBytes();           //TEXTO A BYTES
+            md.update(dataBytes2);                           //SE INTRODUCE TEXTO EN BYTES A RESUMIR
+            byte resumen2[] = md.digest(clave.getBytes());   //SE CALCULA EL RESUMEN
 
-            System.out.println("Primera cadena: " + texto1);
-            System.out.println("Número de bytes: " + md.getDigestLength());
-            System.out.println("Algoritmo: " + md.getAlgorithm());
-            System.out.println("Mensaje resumen: " + new String(resumen));
 
+            if (resumen1.equals(resumen2)) {
+                System.out.println("SON IGUALES:");
+            } else {
+                System.out.println("SON DISTINTOS:");
+            }
+
+            System.out.println("Mensaje 1 resumen: " + new String(resumen1) + " => " + resumen1);
+            System.out.println("Mensaje 2 resumen: " + new String(resumen2) + " => " + resumen2);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
