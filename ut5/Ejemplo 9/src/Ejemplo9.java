@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.security.KeyFactory;
@@ -51,7 +50,7 @@ public class Ejemplo9 {
             } else {
                 System.out.println("LOS DATOS NO SE CORRESPONDEN CON SU FIRMA");
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
