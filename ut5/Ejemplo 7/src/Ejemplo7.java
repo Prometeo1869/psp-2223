@@ -34,12 +34,8 @@ public class Ejemplo7 {
             } else {
                 System.out.println("FIRMA NO VERIFICADA");
             }
-        } catch (NoSuchAlgorithmException e1) {
+        } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException e1) {
             e1.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (SignatureException e) {
-            e.printStackTrace();
         }
     }
 }
